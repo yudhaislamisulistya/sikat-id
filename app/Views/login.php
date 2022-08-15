@@ -44,9 +44,7 @@
 									<h5 class="text-center text-success">Selamat Datang,<br><small>Silahkan Login Untuk Melanjutkan.</small></h5>
 									<div class="actions">
 										<div data-width="300" data-height="200" data-longtitle="true">
-											<a class="login-btn" href="https:/accounts.google.com/o/oauth2/auth?response_type=code&access_type=online&client_id=357634566435-v15tl2se595lcte4b8kpbo5tfd63ar7n.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fsikat.id%2F&state&scope=email%20profile&approval_prompt=auto">
-											<img src="<?= base_url() ?>/assets/images/btn_google.png" class="w-30 img-fluid rounded mx-auto d-block" alt="...">
-											</a>
+											<?= $data['googleButton'] ?>
 										</div>
 									</div>
 								</div>

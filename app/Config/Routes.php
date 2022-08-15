@@ -37,9 +37,20 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 
 $routes->get('/', 'OtentikasiController::index');
+$routes->get('/login', 'OtentikasiController::login');
+$routes->get('/logout', 'OtentikasiController::logout', ['as' => 'logout']);
 
 $routes->group('panel', function($routes){
     $routes->get('dashboard', 'MainController::dashboard', ['as' => 'dashboard_panel']);
+    $routes->get('profile', 'MainController::profile', ['as' => 'profile_panel']);
+    
+
+    $routes->group('data-perumahan-dosen', function($routes){
+        $routes->get('/', 'PerumahanDosenController::index', ['as' => 'data_perumahan_dosen']);
+        $routes->post('save', 'PerumahanDosenController::save', ['as' => 'data_perumahan_dosen_save']);
+        $routes->post('update', 'PerumahanDosenController::update', ['as' => 'data_perumahan_dosen_update']);
+        $routes->post('delete', 'PerumahanDosenController::delete', ['as' => 'data_perumahan_dosen_delete']);
+    });
 });
 
 /*
