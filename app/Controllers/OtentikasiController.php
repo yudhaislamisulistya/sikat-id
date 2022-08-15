@@ -48,6 +48,7 @@ class OtentikasiController extends BaseController
 					'name'=>$data['givenName']. " ".$data['familyName'], 
 					'email'=>$data['email'] , 
 					'profile_img'=>$data['picture'], 
+					'role'=>$checkData['role'], 
 				];
 				$this->userModel->update($data['id'], $userdata);
 			}else{
@@ -56,7 +57,8 @@ class OtentikasiController extends BaseController
 					'oauth_id'=>$data['id'],
 					'name'=>$data['givenName']. " ".$data['familyName'], 
 					'email'=>$data['email'] , 
-					'profile_img'=>$data['picture'], 
+					'profile_img'=>$data['picture'],
+					'role' => 1
 				];
 				$this->userModel->insert($userdata);
 			}
@@ -67,7 +69,7 @@ class OtentikasiController extends BaseController
 			return redirect()->to(base_url());
 		}
 		//Login Berhasil
-		return redirect()->to(base_url()."/panel/dashboard");
+		return redirect()->to(base_url()."/panel/admin/dashboard");
     }
 
     function logout(){

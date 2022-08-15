@@ -44,19 +44,27 @@
                 <div class="sidebar-content" data-simplebar style="height: calc(100% - 60px);">
                     <div class="sidebar-brand">
                         <a href="index.html">
-                            <img src="<?= base_url() ?>/assets/images/logo-sikat.png" height="24" class="logo-light-mode" alt>
-                            <span>Sikat.id</span>
+                            <img src="<?= base_url() ?>/assets/images/logo-sikat.png" height="50" class="logo-light-mode" alt>
+                            <span style="font-size: 28px;">Sikat.id</span>
                         </a>
                     </div>
         
-                    <ul class="sidebar-menu">
+                    <?php if(session()->get('LoggedUserData')['role'] == 2) { ?>
+                        <ul class="sidebar-menu">
+                            <li><a href="<?= route_to('dashboard_panel') ?>"><i class="ti ti-home me-2"></i>Dashboard</a></li>
+                            <span style="margin-left: 20px; font-weight: bold;">Manajemen Data</span>
+                            <li><a href="<?= route_to('data_perumahan_dosen') ?>"><i class="ti ti-file-invoice me-2"></i>Data Perumahan Dosen</a></li>
+                            <li><a href="<?= route_to('data_iuran') ?>"><i class="ti ti-mood-confuzed me-2"></i>Data Iuran</a></li>
+                            <span style="margin-left: 20px; font-weight: bold;">Cek</span>
+                            <li><a href="<?= route_to('check_iuran') ?>"><i class="ti ti-check me-2"></i>Cek Iuran</a></li>
+                        </ul>
+                    <?php }else if(session()->get('LoggedUserData')['role'] == 1){?>
+                        <ul class="sidebar-menu">
                         <li><a href="<?= route_to('dashboard_panel') ?>"><i class="ti ti-home me-2"></i>Dashboard</a></li>
-                        <span style="margin-left: 20px; font-weight: bold;">Manajemen Data</span>
-                        <li><a href="<?= route_to('data_perumahan_dosen') ?>"><i class="ti ti-file-invoice me-2"></i>Data Perumahan Dosen</a></li>
-                        <li><a href="<?= route_to('data_iuran') ?>"><i class="ti ti-mood-confuzed me-2"></i>Data Iuran</a></li>
                         <span style="margin-left: 20px; font-weight: bold;">Cek</span>
-                        <li><a href="<?= route_to('check_iuran') ?>"><i class="ti ti-check me-2"></i>Cek Iuran</a></li>
+                        <li><a href="<?= route_to('check_iuran_detail_lecturer', getUserByEmail(session()->get('LoggedUserData')['email'])['address']) ?>"><i class="ti ti-check me-2"></i>Cek Iuran</a></li>
                     </ul>
+                    <?php }?>
                     <!-- sidebar-menu  -->
                 </div>
             </nav>
@@ -89,8 +97,13 @@
                                                 <small class="text-muted"><?=session()->get("LoggedUserData")['email'];  ?></small>
                                             </div>
                                         </a>
-                                        <a class="dropdown-item text-dark" href="<?= route_to('dashboard_panel') ?>"><span class="mb-0 d-inline-block me-1"><i class="ti ti-home"></i></span> Dashboard</a>
-                                        <a class="dropdown-item text-dark" href="<?= route_to('profile_panel') ?>"><span class="mb-0 d-inline-block me-1"><i class="ti ti-settings"></i></span> Profile</a>
+                                        <?php if(session()->get('LoggedUserData')['role'] == 2) { ?>
+                                            <a class="dropdown-item text-dark" href="<?= route_to('profile_panel') ?>"><span class="mb-0 d-inline-block me-1"><i class="ti ti-settings"></i></span> Profile</a>
+                                            <a class="dropdown-item text-dark" href="<?= route_to('dashboard_panel') ?>"><span class="mb-0 d-inline-block me-1"><i class="ti ti-home"></i></span> Dashboard</a>
+                                        <?php }else if(session()->get('LoggedUserData')['role'] == 1){?>
+                                            <a class="dropdown-item text-dark" href="<?= route_to('dashboard_lecturer') ?>"><span class="mb-0 d-inline-block me-1"><i class="ti ti-home"></i></span> Dashboard</a>
+                                            <a class="dropdown-item text-dark" href="<?= route_to('profile_panel_lecturer') ?>"><span class="mb-0 d-inline-block me-1"><i class="ti ti-settings"></i></span> Profile</a>
+                                        <?php }?>
                                         <div class="dropdown-divider border-top"></div>
                                         <a class="dropdown-item text-dark" href="<?= route_to('logout') ?>"><span class="mb-0 d-inline-block me-1"><i class="ti ti-logout"></i></span> Logout</a>
                                     </div>
@@ -141,11 +154,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
         <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
         <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/tom-select@2.1.0/dist/js/tom-select.complete.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/tom-select@2.1.0/dist/js/tom-select.complete.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/tom-select@2.1.0/dist/js/tom-select.complete.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/tom-select@2.1.0/dist/js/tom-select.complete.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/tom-select@2.1.0/dist/js/tom-select.complete.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/tom-select@2.1.0/dist/js/tom-select.complete.min.js"></script>
         <?= $this->renderSection('javascript') ?>
 

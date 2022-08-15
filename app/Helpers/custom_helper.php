@@ -2,6 +2,7 @@
 
 use App\Models\ContributionModel;
 use App\Models\LecturerHousingModel;
+use App\Models\UserModel;
 
 function getDataPerdos(){
     $lectureHousingModel = new LecturerHousingModel();
@@ -22,9 +23,14 @@ function getDataContribtionByAddress($address){
 }
 
 function rupiah($angka){
-	$hasil_rupiah = "Rp " . number_format($angka,0,',','.');
+    $hasil_rupiah = "Rp " . number_format($angka,0,',','.');
 	return $hasil_rupiah;
- 
+}
+
+function getUserByEmail($email){
+    $userModel = new UserModel();
+    $data = $userModel->where('email', $email)->first();
+    return $data;
 }
 
 ?>

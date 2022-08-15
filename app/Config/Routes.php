@@ -36,11 +36,11 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
-$routes->get('/', 'OtentikasiController::index');
-$routes->get('/login', 'OtentikasiController::login');
+$routes->get('/', 'OtentikasiController::index', ['filter' => 'NoAuth']);
+$routes->get('/login', 'OtentikasiController::login', ['filter' => 'NoAuth']);
 $routes->get('/logout', 'OtentikasiController::logout', ['as' => 'logout']);
 
-$routes->group('panel', function($routes){
+$routes->group('panel/admin', ['filter' => 'Admin:dual,noreturn'], function($routes){
     $routes->get('dashboard', 'MainController::dashboard', ['as' => 'dashboard_panel']);
     $routes->get('profile', 'MainController::profile', ['as' => 'profile_panel']);
     
@@ -61,7 +61,15 @@ $routes->group('panel', function($routes){
 
     $routes->get('cek-iuran', 'IuranController::check', ['as' => 'check_iuran']);
     $routes->post('cek-iuran/detail', 'IuranController::check_detail', ['as' => 'check_iuran_detail']);
+});
 
+$routes->group('panel/lecturer', ['filter' => 'Lecturer:dual,noreturn'], function($routes){
+    $routes->get('dashboard', 'MainController::dashboard_lecturer', ['as' => 'dashboard_lecturer']);
+
+    $routes->post('check-address-save', 'MainController::check_address_save', ['as' => 'check_address_save']);
+    $routes->get('profile', 'MainController::profile', ['as' => 'profile_panel_lecturer']);
+
+    $routes->get('cek-iuran/detail/(:any)', 'IuranController::check_detail_lecturer/$1/', ['as' => 'check_iuran_detail_lecturer']);
 });
 
 /*

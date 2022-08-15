@@ -19,6 +19,8 @@ class UserModel extends Model
         'name',
         'email',
         'profile_img',
+        'role',
+        'address',
     ];
 
     // Dates
