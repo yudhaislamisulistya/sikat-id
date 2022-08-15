@@ -246,7 +246,12 @@
     <?= $this->section('javascript') ?>
     <script>
         $(document).ready(function () {
-            $('#example').DataTable();
+            $('#example').DataTable({
+                dom: 'lBfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
         });
 
         $('.btn-edit').on('click', function () {

@@ -51,6 +51,17 @@ $routes->group('panel', function($routes){
         $routes->post('update', 'PerumahanDosenController::update', ['as' => 'data_perumahan_dosen_update']);
         $routes->post('delete', 'PerumahanDosenController::delete', ['as' => 'data_perumahan_dosen_delete']);
     });
+
+    $routes->group('data-iuran', function($routes){
+        $routes->get('/', 'IuranController::index', ['as' => 'data_iuran']);
+        $routes->post('save', 'IuranController::save', ['as' => 'data_iuran_save']);
+        $routes->post('update', 'IuranController::update', ['as' => 'data_iuran_update']);
+        $routes->post('delete', 'IuranController::delete', ['as' => 'data_iuran_delete']);
+    });
+
+    $routes->get('cek-iuran', 'IuranController::check', ['as' => 'check_iuran']);
+    $routes->post('cek-iuran/detail', 'IuranController::check_detail', ['as' => 'check_iuran_detail']);
+
 });
 
 /*

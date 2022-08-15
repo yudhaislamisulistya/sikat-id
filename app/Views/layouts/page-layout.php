@@ -21,6 +21,8 @@
         <!-- Style Css-->
         <link href="<?= base_url() ?>/assets-new/css/style.min.css" class="theme-opt" rel="stylesheet" type="text/css">
         <link href="<?= base_url() ?>/assets-new/css/dataTables.bootstrap4.min.css" class="theme-opt" rel="stylesheet" type="text/css">
+        <link href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/tom-select@2.1.0/dist/css/tom-select.css" rel="stylesheet">
 
     </head>
 
@@ -49,8 +51,11 @@
         
                     <ul class="sidebar-menu">
                         <li><a href="<?= route_to('dashboard_panel') ?>"><i class="ti ti-home me-2"></i>Dashboard</a></li>
+                        <span style="margin-left: 20px; font-weight: bold;">Manajemen Data</span>
                         <li><a href="<?= route_to('data_perumahan_dosen') ?>"><i class="ti ti-file-invoice me-2"></i>Data Perumahan Dosen</a></li>
-                        <li><a href="<?= route_to('data_perumahan_dosen') ?>"><i class="ti ti-check me-2"></i>Cek Iuran</a></li>
+                        <li><a href="<?= route_to('data_iuran') ?>"><i class="ti ti-mood-confuzed me-2"></i>Data Iuran</a></li>
+                        <span style="margin-left: 20px; font-weight: bold;">Cek</span>
+                        <li><a href="<?= route_to('check_iuran') ?>"><i class="ti ti-check me-2"></i>Cek Iuran</a></li>
                     </ul>
                     <!-- sidebar-menu  -->
                 </div>
@@ -130,6 +135,18 @@
         <script src="<?= base_url() ?>/assets-new/js/jquery.js"></script>
         <script src="<?= base_url() ?>/assets-new/js/jquery.dataTables.min.js"></script>
         <script src="<?= base_url() ?>/assets-new/js/dataTables.bootstrap4.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tom-select@2.1.0/dist/js/tom-select.complete.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tom-select@2.1.0/dist/js/tom-select.complete.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tom-select@2.1.0/dist/js/tom-select.complete.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tom-select@2.1.0/dist/js/tom-select.complete.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tom-select@2.1.0/dist/js/tom-select.complete.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tom-select@2.1.0/dist/js/tom-select.complete.min.js"></script>
         <?= $this->renderSection('javascript') ?>
 
     </body>
