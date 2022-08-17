@@ -84,7 +84,7 @@
                                             data-description="<?= $value->description ?>"
                                             >
                                             <i class="ti ti-edit"></i></button>
-                                        <button class="btn btn-sm btn-danger btn-delete"
+                                        <button class="btn btn-sm btn-danger btn-delete mb-2"
                                             data-id="<?= $value->id_lecturer_housing ?>"><i
                                                 class="ti ti-trash"></i></button>
                                     </td>
@@ -101,6 +101,7 @@
                                     <th>Unit Kerja</th>
                                     <th>Luas Rumah</th>
                                     <th>Keterangan</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </tfoot>
                         </table>

@@ -5,7 +5,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Panel - Sikat.web.id</title>
+        <title><?= session()->get('LoggedUserData')['role'] == 2 ? "Panel Admin" : "Perdos Client"  ?> - Sikat.web.id</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Panel - Sikat (Sistem keamanan Terpadu Perumahan Dosen Unhas Tamalanrea)">
 
@@ -77,7 +77,7 @@
                     <div class="header-bar d-flex justify-content-between">
                         <div class="d-flex align-items-center">
                             <a href="#" class="logo-icon me-3">
-                                <img src="<?= base_url() ?>/assets-new/images/logo-icon.png" height="30" class="small" alt>
+                                <img src="<?= base_url() ?>/assets/images/logo-sikat.png" height="30" class="small" alt>
                             </a>
                             <a id="close-sidebar" class="btn btn-icon btn-soft-light" href="javascript:void(0)">
                                 <i class="ti ti-menu-2"></i>

@@ -82,7 +82,7 @@
                                 <?php foreach ($data as $key => $value) { ?>
                                     <tr style="font-size: 10px;">
                                         <td><?= $value->address ?></td>
-                                        <td><?= $value->name ?></td>
+                                        <td><?= getDataPerdosByAddress($value->address) == NULL ? "-" : getDataPerdosByAddress($value->address)['name'] ?></td>
                                         <td><?= $value->year ?></td>
                                         <td><?= $value->stub ?></td>
                                         <td><?= $value->pay_system ?></td>
@@ -108,7 +108,7 @@
                                             <button class="btn btn-sm btn-primary btn-edit mb-2"
                                                 data-id="<?= $value->id_contribution ?>"
                                                 data-address="<?= $value->address ?>"
-                                                data-name="<?= $value->name ?>"
+                                                data-name="<?= getDataPerdosByAddress($value->address) == NULL ? "-" : getDataPerdosByAddress($value->address)['name'] ?>"
                                                 data-year="<?= $value->year ?>"
                                                 data-stub="<?= $value->stub ?>"
                                                 data-pay-system="<?= $value->pay_system ?>"
@@ -127,7 +127,7 @@
                                                 data-description="<?= $value->description ?>"
                                                 >
                                                 <i class="ti ti-edit"></i></button>
-                                            <button class="btn btn-sm btn-danger btn-delete"
+                                            <button class="btn btn-sm btn-danger btn-delete mb-2"
                                                 data-id="<?= $value->id_contribution ?>"
                                                 >
                                                 <i class="ti ti-trash"></i></button>
@@ -188,7 +188,7 @@
                             <select name="address" id="address">
                                 <option value="">Silahkan Pilih Data Perdos...</option>
                                 <?php foreach (getDataPerdos() as $key => $value) { ?>
-                                    <option value="<?= $value->address ?>"><?= $value->address ?> - <?= $value->name ?></option>
+                                    <option value="<?= $value->address ?>"><?= $value->address ?> - <?= getDataPerdosByAddress($value->address) == NULL ? "-" : getDataPerdosByAddress($value->address)['name'] ?></option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -198,7 +198,7 @@
                         </div>
                         <div class="form-group">
                             <label>Potongan</label>
-                            <input type="text" class="form-control" name="stub" placeholder="Potongan">
+                            <input type="number" class="form-control" name="stub" placeholder="Potongan">
                         </div>
                         <div class="form-group">
                             <label>Sistem Bayar</label>
@@ -216,7 +216,7 @@
                             <select name="month_1" class="form-control">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -224,7 +224,7 @@
                             <select name="month_2" class="form-control">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         </div>
@@ -234,7 +234,7 @@
                             <select name="month_3" class="form-control">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -242,7 +242,7 @@
                             <select name="month_4" class="form-control">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         </div>
@@ -252,7 +252,7 @@
                             <select name="month_5" class="form-control">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -260,7 +260,7 @@
                             <select name="month_6" class="form-control">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         </div>
@@ -270,7 +270,7 @@
                             <select name="month_7" class="form-control">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -278,7 +278,7 @@
                             <select name="month_8" class="form-control">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         </div>
@@ -288,7 +288,7 @@
                             <select name="month_9" class="form-control">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -296,7 +296,7 @@
                             <select name="month_10" class="form-control">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         </div>
@@ -306,7 +306,7 @@
                             <select name="month_11" class="form-control">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -314,7 +314,7 @@
                             <select name="month_12" class="form-control">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         </div>
@@ -361,7 +361,7 @@
                         </div>
                         <div class="form-group">
                             <label>Potongan</label>
-                            <input type="text" class="form-control stub" name="stub" placeholder="Potongan">
+                            <input type="number" class="form-control stub" name="stub" placeholder="Potongan">
                         </div>
                         <div class="form-group">
                             <label>Sistem Bayar</label>
@@ -379,7 +379,7 @@
                             <select name="month_1" class="form-control month_1">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -387,7 +387,7 @@
                             <select name="month_2" class="form-control month_2">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         </div>
@@ -397,7 +397,7 @@
                             <select name="month_3" class="form-control month_3">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -405,7 +405,7 @@
                             <select name="month_4" class="form-control month_4">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         </div>
@@ -415,7 +415,7 @@
                             <select name="month_5" class="form-control month_5">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -423,7 +423,7 @@
                             <select name="month_6" class="form-control month_6">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         </div>
@@ -433,7 +433,7 @@
                             <select name="month_7" class="form-control month_7">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -441,7 +441,7 @@
                             <select name="month_8" class="form-control month_8">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         </div>
@@ -451,7 +451,7 @@
                             <select name="month_9" class="form-control month_9">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -459,7 +459,7 @@
                             <select name="month_10" class="form-control month_10">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         </div>
@@ -469,7 +469,7 @@
                             <select name="month_11" class="form-control month_11">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -477,7 +477,7 @@
                             <select name="month_12" class="form-control month_12">
                                 <option value="" disabled>Silahkan Pilih Status Bayar...</option>
                                 <option value="0">Belum Bayar</option>
-                                <option value="0">Sudah Bayar</option>
+                                <option value="1">Sudah Bayar</option>
                             </select>
                         </div>
                         </div>

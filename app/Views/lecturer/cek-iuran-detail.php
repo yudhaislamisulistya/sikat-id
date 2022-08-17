@@ -9,7 +9,7 @@
             <nav aria-label="breadcrumb" class="d-inline-block mt-2 mt-sm-0">
                 <ul class="breadcrumb bg-transparent rounded mb-0 p-0">
                     <li class="breadcrumb-item text-capitalize"><a href="index.html">Dashboard</a></li>
-                    <li class="breadcrumb-item text-capitalize active" aria-current="page">Profile</li>
+                    <li class="breadcrumb-item text-capitalize active" aria-current="page">Cek Iuran Detail</li>
                 </ul>
             </nav>
         </div>
@@ -31,7 +31,7 @@
                                         <p>Luas Rumah : <span class="badge bg-primary"> <?= getDataPerdosByAddress($contributions[0]->address)['large_temporary'] ?> m2 </span></p>
                                     </div>
                                     <div class="col-md-6 mt-2">
-                                        <p>Potogan : <span class="badge bg-info"> Rp. <?= getDataContribtionByAddress($contributions[0]->address)['stub'] ?> </span></p>
+                                        <p>Iuran : <span class="badge bg-info"><?= rupiah(getDataContribtionByAddress($contributions[0]->address)['stub']) ?> </span></p>
                                     </div>
                                 </div>
                             </div>

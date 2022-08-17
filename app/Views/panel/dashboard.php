@@ -34,7 +34,7 @@
                                         <h6 class="mb-0 fw-bold text-center">Sikat.id - Sistem keamanan Terpadu Perumahan Dosen Unhas Tamalanrea</h6>
                                     </div>
                                     <div class="text-center">
-                                        <img src="<?= base_url() ?>/assets/images/logo-sikat.png" alt="">
+                                        <img class="img-fluid" src="<?= base_url() ?>/assets/images/logo-sikat.png" alt="">
                                     </div>
                                 </div>
                             </div><!--end col-->
