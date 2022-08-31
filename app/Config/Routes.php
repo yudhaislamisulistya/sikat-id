@@ -72,6 +72,9 @@ $routes->group('panel/lecturer', ['filter' => 'Lecturer:dual,noreturn'], functio
     $routes->get('cek-iuran/detail/(:any)', 'IuranController::check_detail_lecturer/$1/', ['as' => 'check_iuran_detail_lecturer']);
 });
 
+
+$routes->get('/get-iuran', 'IuranController::api_get_iuran', ['as' => 'api_get_iuran']);
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

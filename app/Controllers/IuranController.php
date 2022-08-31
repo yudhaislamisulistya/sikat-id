@@ -4,9 +4,11 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ContributionModel;
+use CodeIgniter\API\ResponseTrait;
 
 class IuranController extends BaseController
 {
+    use ResponseTrait;
     public function __construct()
     {
         $this->contributionModel = new ContributionModel();
@@ -61,5 +63,16 @@ class IuranController extends BaseController
     public function check_detail_lecturer($address){
         $contributions = $this->contributionModel->where('address', $address)->get()->getResult();
         return view('lecturer/cek-iuran-detail', compact('contributions'));
+    }
+
+    // API
+    public function api_get_iuran(){
+        $data = $this->contributionModel->get()->getResult();
+        return $this->respond(
+            [
+                'status' => true,
+                'data' => $data
+            ]
+        );
     }
 }
