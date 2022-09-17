@@ -32,6 +32,7 @@ class IuranController extends BaseController
     public function save(){
         try {
             $data = $this->request->getVar();
+            $data['name'] = getDataPerdosByAddress($data['address'])['name'];
             $data['month_all'] = $data['month_1'] + $data['month_2'] + $data['month_3'] + $data['month_4'] + $data['month_5'] + $data['month_6'] + $data['month_7'] + $data['month_8'] + $data['month_9'] + $data['month_10'] + $data['month_11'] + $data['month_12'];
             $this->contributionModel->insert($data);
             return redirect()->back()->with('status', 'success');

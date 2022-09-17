@@ -72,20 +72,231 @@
                                 <?php foreach ($contributions as $key => $value) { ?>
                                     <tr style="font-size: 10px;">
                                         <td><?= $value->year ?></td>
-                                        <td><?= $value->month_1 == 1 ? "<span class='badge bg-success'><i class='ti ti-check'></i></span>" : "<span class='badge bg-danger'><i class='ti ti-minus'></i></span>" ?></td>
-                                        <td><?= $value->month_2 == 1 ? "<span class='badge bg-success'><i class='ti ti-check'></i></span>" : "<span class='badge bg-danger'><i class='ti ti-minus'></span>" ?></td>
-                                        <td><?= $value->month_3 == 1 ? "<span class='badge bg-success'><i class='ti ti-check'></i></span>" : "<span class='badge bg-danger'><i class='ti ti-minus'></span>" ?></td>
-                                        <td><?= $value->month_4 == 1 ? "<span class='badge bg-success'><i class='ti ti-check'></i></span>" : "<span class='badge bg-danger'><i class='ti ti-minus'></span>" ?></td>
-                                        <td><?= $value->month_5 == 1 ? "<span class='badge bg-success'><i class='ti ti-check'></i></span>" : "<span class='badge bg-danger'><i class='ti ti-minus'></span>" ?></td>
-                                        <td><?= $value->month_6 == 1 ? "<span class='badge bg-success'><i class='ti ti-check'></i></span>" : "<span class='badge bg-danger'><i class='ti ti-minus'></span>" ?></td>
-                                        <td><?= $value->month_7 == 1 ? "<span class='badge bg-success'><i class='ti ti-check'></i></span>" : "<span class='badge bg-danger'><i class='ti ti-minus'></span>" ?></td>
-                                        <td><?= $value->month_8 == 1 ? "<span class='badge bg-success'><i class='ti ti-check'></i></span>" : "<span class='badge bg-danger'><i class='ti ti-minus'></span>" ?></td>
-                                        <td><?= $value->month_9 == 1 ? "<span class='badge bg-success'><i class='ti ti-check'></i></span>" : "<span class='badge bg-danger'><i class='ti ti-minus'></span>" ?></td>
-                                        <td><?= $value->month_10 == 1 ? "<span class='badge bg-success'><i class='ti ti-check'></i></span>" : "<span class='badge bg-danger'><i class='ti ti-minus'></span>" ?></td>
-                                        <td><?= $value->month_11 == 1 ? "<span class='badge bg-success'><i class='ti ti-check'></i></span>" : "<span class='badge bg-danger'><i class='ti ti-minus'></span>" ?></td>
-                                        <td><?= $value->month_12 == 1 ? "<span class='badge bg-success'><i class='ti ti-check'></i></span>" : "<span class='badge bg-danger'><i class='ti ti-minus'></span>" ?></td>
                                         <td>
-                                            <?= rupiah($value->month_all*$value->stub) ?>
+                                            <?php
+                                                if($value->stub != 0){
+                                                    if($value->month_1 != 0){
+                                                        $hasil = ($value->month_1 / $value->stub) * 100;
+                                                        if($hasil == 100){
+                                                            echo "<span style='font-size: 10px' class='badge bg-success'>Sudah Bayar (100%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_1)."</span>";
+                                                        }else{
+                                                            echo "<span style='font-size: 10px' class='badge bg-warning'>Belum Lunas (".$hasil."%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_1)."</span>";
+                                                        }
+                                                    }else{
+                                                        echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar</span>";
+                                                    }
+                                                }else{
+                                                    echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar & Potongan 0</span>";
+                                                }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                                if($value->stub != 0){
+                                                    if($value->month_2 != 0){
+                                                        $hasil = ($value->month_2 / $value->stub) * 100;
+                                                        if($hasil == 100){
+                                                            echo "<span style='font-size: 10px' class='badge bg-success'>Sudah Bayar (100%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_2)."</span>";
+                                                        }else{
+                                                            echo "<span style='font-size: 10px' class='badge bg-warning'>Belum Lunas (".$hasil."%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_2)."</span>";
+                                                        }
+                                                    }else{
+                                                        echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar</span>";
+                                                    }
+                                                }else{
+                                                    echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar & Potongan 0</span>";
+                                                }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                                if($value->stub != 0){
+                                                    if($value->month_3 != 0){
+                                                        $hasil = ($value->month_3 / $value->stub) * 100;
+                                                        if($hasil == 100){
+                                                            echo "<span style='font-size: 10px' class='badge bg-success'>Sudah Bayar (100%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_3)."</span>";
+                                                        }else{
+                                                            echo "<span style='font-size: 10px' class='badge bg-warning'>Belum Lunas (".$hasil."%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_3)."</span>";
+                                                        }
+                                                    }else{
+                                                        echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar</span>";
+                                                    }
+                                                }else{
+                                                    echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar & Potongan 0</span>";
+                                                }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                                if($value->stub != 0){
+                                                    if($value->month_4 != 0){
+                                                        $hasil = ($value->month_4 / $value->stub) * 100;
+                                                        if($hasil == 100){
+                                                            echo "<span style='font-size: 10px' class='badge bg-success'>Sudah Bayar (100%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_4)."</span>";
+                                                        }else{
+                                                            echo "<span style='font-size: 10px' class='badge bg-warning'>Belum Lunas (".$hasil."%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_4)."</span>";
+                                                        }
+                                                    }else{
+                                                        echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar</span>";
+                                                    }
+                                                }else{
+                                                    echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar & Potongan 0</span>";
+                                                }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                                if($value->stub != 0){
+                                                    if($value->month_5 != 0){
+                                                        $hasil = ($value->month_5 / $value->stub) * 100;
+                                                        if($hasil == 100){
+                                                            echo "<span style='font-size: 10px' class='badge bg-success'>Sudah Bayar (100%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_5)."</span>";
+                                                        }else{
+                                                            echo "<span style='font-size: 10px' class='badge bg-warning'>Belum Lunas (".$hasil."%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_5)."</span>";
+                                                        }
+                                                    }else{
+                                                        echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar</span>";
+                                                    }
+                                                }else{
+                                                    echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar & Potongan 0</span>";
+                                                }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                                if($value->stub != 0){
+                                                    if($value->month_6 != 0){
+                                                        $hasil = ($value->month_6 / $value->stub) * 100;
+                                                        if($hasil == 100){
+                                                            echo "<span style='font-size: 10px' class='badge bg-success'>Sudah Bayar (100%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_6)."</span>";
+                                                        }else{
+                                                            echo "<span style='font-size: 10px' class='badge bg-warning'>Belum Lunas (".$hasil."%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_6)."</span>";
+                                                        }
+                                                    }else{
+                                                        echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar</span>";
+                                                    }
+                                                }else{
+                                                    echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar & Potongan 0</span>";
+                                                }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                                if($value->stub != 0){
+                                                    if($value->month_7 != 0){
+                                                        $hasil = ($value->month_7 / $value->stub) * 100;
+                                                        if($hasil == 100){
+                                                            echo "<span style='font-size: 10px' class='badge bg-success'>Sudah Bayar (100%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_7)."</span>";
+                                                        }else{
+                                                            echo "<span style='font-size: 10px' class='badge bg-warning'>Belum Lunas (".$hasil."%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_7)."</span>";
+                                                        }
+                                                    }else{
+                                                        echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar</span>";
+                                                    }
+                                                }else{
+                                                    echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar & Potongan 0</span>";
+                                                }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                                if($value->stub != 0){
+                                                    if($value->month_8 != 0){
+                                                        $hasil = ($value->month_8 / $value->stub) * 100;
+                                                        if($hasil == 100){
+                                                            echo "<span style='font-size: 10px' class='badge bg-success'>Sudah Bayar (100%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_8)."</span>";
+                                                        }else{
+                                                            echo "<span style='font-size: 10px' class='badge bg-warning'>Belum Lunas (".$hasil."%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_8)."</span>";
+                                                        }
+                                                    }else{
+                                                        echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar</span>";
+                                                    }
+                                                }else{
+                                                    echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar & Potongan 0</span>";
+                                                }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                                if($value->stub != 0){
+                                                    if($value->month_9 != 0){
+                                                        $hasil = ($value->month_9 / $value->stub) * 100;
+                                                        if($hasil == 100){
+                                                            echo "<span style='font-size: 10px' class='badge bg-success'>Sudah Bayar (100%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_9)."</span>";
+                                                        }else{
+                                                            echo "<span style='font-size: 10px' class='badge bg-warning'>Belum Lunas (".$hasil."%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_9)."</span>";
+                                                        }
+                                                    }else{
+                                                        echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar</span>";
+                                                    }
+                                                }else{
+                                                    echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar & Potongan 0</span>";
+                                                }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                                if($value->stub != 0){
+                                                    if($value->month_10 != 0){
+                                                        $hasil = ($value->month_10 / $value->stub) * 100;
+                                                        if($hasil == 100){
+                                                            echo "<span style='font-size: 10px' class='badge bg-success'>Sudah Bayar (100%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_10)."</span>";
+                                                        }else{
+                                                            echo "<span style='font-size: 10px' class='badge bg-warning'>Belum Lunas (".$hasil."%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_10)."</span>";
+                                                        }
+                                                    }else{
+                                                        echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar</span>";
+                                                    }
+                                                }else{
+                                                    echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar & Potongan 0</span>";
+                                                }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                                if($value->stub != 0){
+                                                    if($value->month_11 != 0){
+                                                        $hasil = ($value->month_11 / $value->stub) * 100;
+                                                        if($hasil == 100){
+                                                            echo "<span style='font-size: 10px' class='badge bg-success'>Sudah Bayar (100%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_11)."</span>";
+                                                        }else{
+                                                            echo "<span style='font-size: 10px' class='badge bg-warning'>Belum Lunas (".$hasil."%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_11)."</span>";
+                                                        }
+                                                    }else{
+                                                        echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar</span>";
+                                                    }
+                                                }else{
+                                                    echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar & Potongan 0</span>";
+                                                }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                                if($value->stub != 0){
+                                                    if($value->month_12 != 0){
+                                                        $hasil = ($value->month_12 / $value->stub) * 100;
+                                                        if($hasil == 100){
+                                                            echo "<span style='font-size: 10px' class='badge bg-success'>Sudah Bayar (100%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_12)."</span>";
+                                                        }else{
+                                                            echo "<span style='font-size: 10px' class='badge bg-warning'>Belum Lunas (".$hasil."%)</span><br><span style='font-size: 10px; text-align: center;'>".rupiah($value->month_12)."</span>";
+                                                        }
+                                                    }else{
+                                                        echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar</span>";
+                                                    }
+                                                }else{
+                                                    echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar & Potongan 0</span>";
+                                                }
+                                            ?>
+                                        </td>
+
+                                        <td>
+                                            <?php
+                                                if($value->stub != 0){
+                                                    echo "<span style='font-size: 10px'>".rupiah($value->month_all)."</span>";
+                                                }else{
+                                                    echo "<span style='font-size: 10px' class='badge bg-danger'>Belum Bayar & Potongan 0</span>";
+                                                }
+                                            ?>
                                         </td>
                                     </tr>
                                 <?php } ?>

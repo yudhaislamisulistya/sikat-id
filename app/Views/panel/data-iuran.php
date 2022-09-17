@@ -103,7 +103,7 @@
                     <div class="modal-body">
                         <div class="form-group mb-10">
                             <label>Data Perdos</label>
-                            <select name="address" id="address">
+                            <select name="address" id="address" required>
                                 <option value="">Silahkan Pilih Data Perdos...</option>
                                 <?php foreach (getDataPerdos() as $key => $value) { ?>
                                     <option value="<?= $value->address ?>"><?= $value->address ?> - <?= getDataPerdosByAddress($value->address) == NULL ? "-" : getDataPerdosByAddress($value->address)['name'] ?></option>
@@ -112,15 +112,15 @@
                         </div>
                         <div class="form-group">
                             <label>Tahun</label>
-                            <input type="text" class="form-control" name="year" placeholder="Tahun">
+                            <input type="text" class="form-control" name="year" placeholder="Tahun" required>
                         </div>
                         <div class="form-group">
                             <label>Potongan</label>
-                            <input type="number" class="form-control" name="stub" placeholder="Potongan">
+                            <input type="number" class="form-control" name="stub" placeholder="Potongan" required>
                         </div>
                         <div class="form-group">
                             <label>Sistem Bayar</label>
-                            <select name="pay_system" class="form-control">
+                            <select name="pay_system" class="form-control" required>
                                 <option value="" disabled>Silahkan Pilih Sistem Bayar...</option>
                                 <option value="By.Lgs">By.Lgs</option>
                                 <option value="Tr.Rek">Tr.Rek</option>
@@ -131,61 +131,61 @@
                         <div class="col-md-6">
                         <div class="form-group">
                             <label>Bulan Pertama</label>
-                            <input type="number" class="form-control" name="month_1" placeholder="Bulan 1">
+                            <input type="number" class="form-control" name="month_1" placeholder="Bulan 1" required>
                         </div>
                         <div class="form-group">
                             <label>Bulan Kedua</label>
-                            <input type="number" class="form-control" name="month_2" placeholder="Bulan 2">
+                            <input type="number" class="form-control" name="month_2" placeholder="Bulan 2" required>
                         </div>
                         </div>
                         <div class="col-md-6">
                         <div class="form-group">
                             <label>Bulan Ketiga</label>
-                            <input type="number" class="form-control" name="month_3" placeholder="Bulan 3">
+                            <input type="number" class="form-control" name="month_3" placeholder="Bulan 3" required>
                         </div>
                         <div class="form-group">
                             <label>Bulan Keempat</label>
-                            <input type="number" class="form-control" name="month_4" placeholder="Bulan 4">
+                            <input type="number" class="form-control" name="month_4" placeholder="Bulan 4" required>
                         </div>
                         </div>
                         <div class="col-md-6">
                         <div class="form-group">
                             <label>Bulan Kelima</label>
-                            <input type="number" class="form-control" name="month_5" placeholder="Bulan 5">
+                            <input type="number" class="form-control" name="month_5" placeholder="Bulan 5" required>
                         </div>
                         <div class="form-group">
                             <label>Bulan Keenam</label>
-                            <input type="number" class="form-control" name="month_6" placeholder="Bulan 6">
+                            <input type="number" class="form-control" name="month_6" placeholder="Bulan 6" required>
                         </div>
                         </div>
                         <div class="col-md-6">
                         <div class="form-group">
                             <label>Bulan Ketujuh</label>
-                            <input type="number" class="form-control" name="month_7" placeholder="Bulan 7">
+                            <input type="number" class="form-control" name="month_7" placeholder="Bulan 7" required>
                         </div>
                         <div class="form-group">
                             <label>Bulan Kedelapan</label>
-                            <input type="number" class="form-control" name="month_8" placeholder="Bulan 8">
+                            <input type="number" class="form-control" name="month_8" placeholder="Bulan 8" required>
                         </div>
                         </div>
                         <div class="col-md-6">
                         <div class="form-group">
                             <label>Bulan Kesembilan</label>
-                            <input type="number" class="form-control" name="month_9" placeholder="Bulan 9">
+                            <input type="number" class="form-control" name="month_9" placeholder="Bulan 9" required>
                         </div>
                         <div class="form-group">
                             <label>Bulan Kesepuluh</label>
-                            <input type="number" class="form-control" name="month_10" placeholder="Bulan 10">
+                            <input type="number" class="form-control" name="month_10" placeholder="Bulan 10" required>
                         </div>
                         </div>
                         <div class="col-md-6">
                         <div class="form-group">
                             <label>Bulan Kesebelas</label>
-                            <input type="number" class="form-control" name="month_11" placeholder="Bulan 11">
+                            <input type="number" class="form-control" name="month_11" placeholder="Bulan 11" required>
                         </div>
                         <div class="form-group">
                             <label>Bulan Keduabelas</label>
-                            <input type="number" class="form-control" name="month_12" placeholder="Bulan 12">
+                            <input type="number" class="form-control" name="month_12" placeholder="Bulan 12" required>
                         </div>
                         </div>
                         </div>
@@ -231,11 +231,11 @@
                         </div>
                         <div class="form-group">
                             <label>Potongan</label>
-                            <input type="number" class="form-control stub" name="stub" placeholder="Potongan">
+                            <input type="number" class="form-control stub" name="stub" placeholder="Potongan" required>
                         </div>
                         <div class="form-group">
                             <label>Sistem Bayar</label>
-                            <select name="pay_system" class="form-control pay_system">
+                            <select name="pay_system" class="form-control pay_system" required>
                                 <option value="" disabled>Silahkan Pilih Sistem Bayar...</option>
                                 <option value="By.Lgs">By.Lgs</option>
                                 <option value="Tr.Rek">Tr.Rek</option>
@@ -246,61 +246,61 @@
                         <div class="col-md-6">
                         <div class="form-group">
                             <label>Bulan Pertama</label>
-                            <input type="number" class="form-control month_1" name="month_1" placeholder="Bulan 1">
+                            <input type="number" class="form-control month_1" name="month_1" placeholder="Bulan 1" required>
                         </div>
                         <div class="form-group">
                             <label>Bulan Kedua</label>
-                            <input type="number" class="form-control month_2" name="month_2" placeholder="Bulan 2">
+                            <input type="number" class="form-control month_2" name="month_2" placeholder="Bulan 2" required>
                         </div>
                         </div>
                         <div class="col-md-6">
                         <div class="form-group">
                             <label>Bulan Ketiga</label>
-                            <input type="number" class="form-control month_3" name="month_3" placeholder="Bulan 3">
+                            <input type="number" class="form-control month_3" name="month_3" placeholder="Bulan 3" required>
                         </div>
                         <div class="form-group">
                             <label>Bulan Keempat</label>
-                            <input type="number" class="form-control month_4" name="month_4" placeholder="Bulan 4">
+                            <input type="number" class="form-control month_4" name="month_4" placeholder="Bulan 4" required>
                         </div>
                         </div>
                         <div class="col-md-6">
                         <div class="form-group">
                             <label>Bulan Kelima</label>
-                            <input type="number" class="form-control month_5" name="month_5" placeholder="Bulan 5">
+                            <input type="number" class="form-control month_5" name="month_5" placeholder="Bulan 5" required>
                         </div>
                         <div class="form-group">
                             <label>Bulan Keenam</label>
-                            <input type="number" class="form-control month_6" name="month_6" placeholder="Bulan 6">
+                            <input type="number" class="form-control month_6" name="month_6" placeholder="Bulan 6" required>
                         </div>
                         </div>
                         <div class="col-md-6">
                         <div class="form-group">
                             <label>Bulan Ketujuh</label>
-                            <input type="number" class="form-control month_7" name="month_7" placeholder="Bulan 7">
+                            <input type="number" class="form-control month_7" name="month_7" placeholder="Bulan 7" required>
                         </div>
                         <div class="form-group">
                             <label>Bulan Kedelapan</label>
-                            <input type="number" class="form-control month_8" name="month_8" placeholder="Bulan 8">
+                            <input type="number" class="form-control month_8" name="month_8" placeholder="Bulan 8" required>
                         </div>
                         </div>
                         <div class="col-md-6">
                         <div class="form-group">
                             <label>Bulan Kesembilan</label>
-                            <input type="number" class="form-control month_9" name="month_9" placeholder="Bulan 9">
+                            <input type="number" class="form-control month_9" name="month_9" placeholder="Bulan 9" required>
                         </div>
                         <div class="form-group">
                             <label>Bulan Kesepuluh</label>
-                            <input type="number" class="form-control month_10" name="month_10" placeholder="Bulan 10">
+                            <input type="number" class="form-control month_10" name="month_10" placeholder="Bulan 10" required>
                         </div>
                         </div>
                         <div class="col-md-6">
                         <div class="form-group">
                             <label>Bulan Kesebelas</label>
-                            <input type="number" class="form-control month_11" name="month_11" placeholder="Bulan 11">
+                            <input type="number" class="form-control month_11" name="month_11" placeholder="Bulan 11" required>
                         </div>
                         <div class="form-group">
                             <label>Bulan Keduabelas</label>
-                            <input type="number" class="form-control month_12" name="month_12" placeholder="Bulan 12">
+                            <input type="number" class="form-control month_12" name="month_12" placeholder="Bulan 12" required>
                         </div>
                         </div>
                         </div>
