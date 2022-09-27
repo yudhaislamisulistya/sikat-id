@@ -5,7 +5,7 @@
                     <div class="layout-specing">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <div>
-                                <h6 class="text-muted mb-1">Welcome back, <?=session()->get("LoggedUserData")['name'];  ?>!</h6>
+                                <h6 class="text-muted mb-1">Welcome back Again, <?=session()->get("LoggedUserData")['name'];  ?>!</h6>
                                 <h5 class="mb-0">Dashboard</h5>
                             </div>
                         </div>
