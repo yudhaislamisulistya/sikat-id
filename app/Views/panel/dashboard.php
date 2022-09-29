@@ -18,7 +18,7 @@
                                             <i class="uil uil-users-alt fs-4 mb-0"></i>
                                         </div>
                                         <div class="flex-1 ms-3">
-                                            <h6 class="mb-0 text-muted">Data Perdos</h6>
+                                            <h6 class="mb-0 text-muted">Data Perumahan Dosen</h6>
                                             <p class="fs-5 text-dark fw-bold mb-0"><span class="counter-value" data-target="<?= count(getDataPerdos()) ?>">-</span> Orang</p>
                                         </div>
                                     </div>
